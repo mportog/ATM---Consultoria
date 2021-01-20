@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        Toast.makeText(applicationContext, "onCreate", Toast.LENGTH_SHORT).show()
+
         button_contato.setOnClickListener {
             Toast.makeText(applicationContext, "Redirecionando para Contato", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, DetalheContatoActivity :: class.java))
@@ -28,5 +30,35 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, DetalheClienteActivity :: class.java))
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+Toast.makeText(applicationContext, "onStart", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Toast.makeText(applicationContext, "onPause", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Toast.makeText(applicationContext, "onStop", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Toast.makeText(applicationContext, "onRestart", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(applicationContext, "onResume", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    Toast.makeText(applicationContext, "onDestroy", Toast.LENGTH_SHORT).show()
     }
 }
